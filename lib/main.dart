@@ -18,6 +18,14 @@ class MyApp extends StatelessWidget {
         body: const Text('Body'),
         bottomNavigationBar: BottomNavigationBar(items: const [
           BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+              label: "Favorite",
+              icon: Icon(
+                Icons.favorite,
+                color: Colors.pink,
+                size: 24.0,
+                semanticLabel: 'Icons Favorite',
+              )),
           BottomNavigationBarItem(label: "Settings", icon: Icon(Icons.settings))
         ]),
       ),
