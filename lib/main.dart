@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           title: const Text("Flutter Basic App"),
         ),
         body: const Text('Body'),
-        bottomNavigationBar: BottomNavigationBar(items: [
+        bottomNavigationBar: BottomNavigationBar(items: const [
           BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
           BottomNavigationBarItem(label: "Settings", icon: Icon(Icons.settings))
         ]),
