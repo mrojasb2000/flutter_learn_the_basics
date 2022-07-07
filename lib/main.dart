@@ -6,7 +6,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  String button_name = 'button_click';
+  String buttonLabel = 'Click Me';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
             onPressed: () {
               print('Print something');
             },
-            child: Text(button_name),
+            child: Text(buttonLabel),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(items: const [
