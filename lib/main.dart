@@ -4,8 +4,14 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   String buttonLabel = 'Click Me';
 
   @override
@@ -19,7 +25,9 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: ElevatedButton(
             onPressed: () {
-              print('Print something');
+              setState(() {
+                buttonLabel = 'Clicked';
+              });
             },
             child: Text(buttonLabel),
           ),
