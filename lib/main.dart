@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String buttonLabel = 'Click Me';
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,24 +33,32 @@ class _MyAppState extends State<MyApp> {
             child: Text(buttonLabel),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(items: const [
-          BottomNavigationBarItem(
-            label: "Home",
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-              label: "Favorite",
-              icon: Icon(
-                Icons.favorite,
-                color: Colors.pink,
-                size: 24.0,
-                semanticLabel: 'Icons Favorite',
-              )),
-          BottomNavigationBarItem(
-            label: "Settings",
-            icon: Icon(Icons.settings),
-          )
-        ]),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              label: "Home",
+              icon: Icon(Icons.home),
+            ),
+            BottomNavigationBarItem(
+                label: "Favorite",
+                icon: Icon(
+                  Icons.favorite,
+                  color: Colors.pink,
+                  size: 24.0,
+                  semanticLabel: 'Icons Favorite',
+                )),
+            BottomNavigationBarItem(
+              label: "Settings",
+              icon: Icon(Icons.settings),
+            ),
+          ],
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+        ),
       ),
     );
   }
